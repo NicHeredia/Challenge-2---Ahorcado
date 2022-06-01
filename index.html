@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+    <link rel="stylesheet" href="css/mobile.css">
+    <title>Challenge Ahorcado</title>
+</head>
+<body>
+    <header>
+        <img src="images/logoamarillo.svg" id="logo" alt="">
+    </header>
+
+    <section id="pantalla-principal" class="animate__animated animate__fadeIn">
+        <h1 class="titulo">El juego del Ahorcado</h1>
+        <div class="botones__pantallaPrincipal">
+            <button><span>Nuevo juego</span></button>
+            <button id="boton-nuevaPalabra"><span>Agregar nueva palabra</span></button>
+        </div>
+    </section>
+
+    <section id="section-agregar-palabra" class="animate__animated animate__slideInLeft">
+        <h2 class="titulo">Ingrese la nueva palabra</h2>
+        <div class="textInputWrapper">
+            <input placeholder="Escriba aqui" type="text" maxlength="8" class="textInput" id="input-nueva-palabra">
+        </div>
+        <p><i class="bi bi-exclamation-circle-fill"></i>Solo ingresar letras, sin espacios, sin acentos y maximo 8 caracteres</p>
+        <p id="mostrarPalabrasNuevas" class="animate__animated animate__fadeIn"></p>
+        <div class="botones__agregarPalabra">
+            <button id="botonGuardar"><span>Guardar</span></button>
+            <button id="botonSalir"><span>Salir</span></button>
+        </div>
+    </section>
+</body>
+<script src="js/AgregarPalabra.js"></script>
+</html>
