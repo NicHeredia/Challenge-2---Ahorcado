@@ -7,6 +7,10 @@
     box-sizing: border-box;
 }
 
+::-webkit-scrollbar {
+  display: none;
+}
+
 body {
     /* background-color: #023047; */
     font-family: 'Roboto Serif', serif;
@@ -124,7 +128,7 @@ button {
 .textInputWrapper {
     position: relative;
     width: 260px;
-    margin: 80px auto;
+    margin: 30px auto 20px;
     --accent-color: #ffb703;
   }
   
@@ -212,5 +216,25 @@ button {
   
   .textInputWrapper:focus-within .textInput::placeholder {
     opacity: 0;
+  }
+
+  /* Fin seccion agregar palabra */
+
+  /* inicio footer */
+
+  #footer{
+    margin: 90px auto;
+    padding: 20px;
+    color: #CFDEF3;
+    background-color: #252525;
+    text-align: center;
+    font-size: 10px;
+  }
+
+  
+
+  .footer-icon{
+    font-size: 24px;
+    color: #ffb703
   }
   

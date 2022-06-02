@@ -11,29 +11,38 @@
 </head>
 <body>
     <header>
-        <img src="images/logoamarillo.svg" id="logo" alt="">
+        <img src="images/logo.png" id="logo" alt="">
     </header>
+    
+    <main>
+        <section id="pantalla-principal" class="animate__animated animate__fadeIn">
+            <h1 class="titulo">El juego del Ahorcado</h1>
+            <div class="botones__pantallaPrincipal">
+                <button><span>Nuevo juego</span></button>
+                <button id="boton-nuevaPalabra"><span>Agregar nueva palabra</span></button>
+            </div>
+        </section>
 
-    <section id="pantalla-principal" class="animate__animated animate__fadeIn">
-        <h1 class="titulo">El juego del Ahorcado</h1>
-        <div class="botones__pantallaPrincipal">
-            <button><span>Nuevo juego</span></button>
-            <button id="boton-nuevaPalabra"><span>Agregar nueva palabra</span></button>
-        </div>
-    </section>
+        <section id="section-agregar-palabra" class="animate__animated animate__slideInLeft">
+            <h2 class="titulo">Ingrese la nueva palabra</h2>
+            <div class="textInputWrapper">
+                <input placeholder="Escriba aqui" type="text" maxlength="8" class="textInput" id="input-nueva-palabra">
+            </div>
+            <p id="mostrarPalabrasNuevas" class="animate__animated animate__fadeIn"></p>
+            <p><i class="bi bi-exclamation-circle-fill"></i>Solo ingresar letras, sin espacios, sin acentos y maximo 8 caracteres</p>
+            <div class="botones__agregarPalabra">
+                <button id="botonGuardar"><span>Guardar</span></button>
+                <button id="botonSalir"><span>Salir</span></button>
+            </div>
+        </section>
+    </main>
 
-    <section id="section-agregar-palabra" class="animate__animated animate__slideInLeft">
-        <h2 class="titulo">Ingrese la nueva palabra</h2>
-        <div class="textInputWrapper">
-            <input placeholder="Escriba aqui" type="text" maxlength="8" class="textInput" id="input-nueva-palabra">
-        </div>
-        <p><i class="bi bi-exclamation-circle-fill"></i>Solo ingresar letras, sin espacios, sin acentos y maximo 8 caracteres</p>
-        <p id="mostrarPalabrasNuevas" class="animate__animated animate__fadeIn"></p>
-        <div class="botones__agregarPalabra">
-            <button id="botonGuardar"><span>Guardar</span></button>
-            <button id="botonSalir"><span>Salir</span></button>
-        </div>
-    </section>
+    <footer id="footer">
+            <h2>Heredia Nicolas</h2>
+            <h2>Challenge Alura N°2</h2>
+            <a href="https://github.com/NicHeredia" target="_blank"><i class="bi bi-github footer-icon"></i></a>
+            <a href="https://www.linkedin.com/in/heredianico/" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a>
+    </footer>
 </body>
 <script src="js/AgregarPalabra.js"></script>
 </html>
