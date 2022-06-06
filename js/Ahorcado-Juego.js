@@ -12,8 +12,9 @@ var botonGuardarYJugar = document.querySelector("#botonGuardarYJugar");
 
 //Elegir palabra random y crear los guiones correspondientes con las letras
 //ocultas
+var palabraSecreta = "";
 function crearGuionesPalabra(array){
-    var palabraSecreta = array[Math.floor(Math.random()*array.length)];
+    palabraSecreta = array[Math.floor(Math.random()*array.length)];
     var tableroJuego = document.getElementById("tablero-juego");
     
     for(let i = 0; i <= (palabraSecreta.length - 1); i++){
@@ -59,9 +60,14 @@ inputNuevaPalabra.addEventListener("keyup", function(e){
 botonGuardarYJugar.addEventListener("click", function(e){
     var palabraElegida = [];
     palabraElegida.push(inputNuevaPalabra.value);
+    palabraSecreta = palabraElegida[0];
     crearGuionesPalabra(palabraElegida);
     transicionPantallas(pantallaAgregarPalabra,"none",pantallaJuego,"block");
 })
+
+
+
+
 
 
 
