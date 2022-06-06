@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-    <link rel="stylesheet" href="css/mobile.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Challenge Ahorcado</title>
 </head>
 <body>
@@ -17,32 +17,71 @@
     <main id="main">
         <section id="pantalla-principal" class="animate__animated animate__fadeIn">
             <h1 class="titulo">El juego del Ahorcado</h1>
-            <div class="botones__pantallaPrincipal">
-                <button><span>Nuevo juego</span></button>
-                <button id="boton-nuevaPalabra"><span>Agregar nueva palabra</span></button>
+            <div class="botones__pantalla-principal">
+                <button class="boton" id="botonNuevoJuego"><span>Nuevo juego</span></button>
+                <button class="boton" id="botonComoJugar"><span>Como se juega?</span></button>
             </div>
         </section>
 
-        <section id="section-agregar-palabra" class="animate__animated animate__slideInLeft">
-            <h2 class="titulo">Ingrese la nueva palabra</h2>
+        <section id="pantalla-comoJugar" class="animate__animated animate__slideInLeft">
+            <h2>Como se juega?</h2>
+            <p>El ahorcado es un juego de adivinanzas, normalmente jugado con papel y lapiz para 2 o mas jugadores. Un jugador piensa en una palabra y el otro jugador trata de adivinarla.</p>
+            <p>Usando una fila de guiones, se representa la palabra a adivinar, dando el número de letras. Si el jugador adivinador sugiere una letra que aparece en la palabra, la letra se escribe en todas sus posiciones correctas. Si la letra no se encuentra en la palabra esta contara como un error y se representara siguiendo el dibujo de la orca</p>
+            <p> El juego termina cuando:</p>
+            <ul>
+                <li>El jugador adivinador completa la palabra, o adivina la palabra completa correctamente</li>
+                <li>Se acaban los 10 intentos y se completa el dibujo de la orca</li>
+            </ul>
+            <button class="boton" id="botonJugar"><span>Jugar</span></button>
+
+        </section>
+
+        <section id="pantalla-agregarPalabra" class="animate__animated animate__slideInLeft">
+            <h2 class="titulo">Ingrese la palabra</h2>
             <div class="textInputWrapper">
                 <input placeholder="Escriba aqui" type="text" maxlength="8" class="textInput" id="input-nueva-palabra">
             </div>
-            <p id="mostrarPalabrasNuevas" class="animate__animated animate__fadeIn"></p>
-            <p><i class="bi bi-exclamation-circle-fill"></i>Solo ingresar letras, sin espacios, sin acentos y maximo 8 caracteres</p>
+            <p><i class="bi bi-exclamation-circle-fill"></i>Solo ingresar letras, sin acentos y maximo 8 caracteres</p>
             <div class="botones__agregarPalabra">
-                <button id="botonGuardar"><span>Guardar</span></button>
-                <button id="botonSalir"><span>Salir</span></button>
+                <button class="boton" id="botonGuardarYJugar"><span>Guardar y Jugar</span></button>
+                <button class="boton" id="botonVolver"><span>Volver</span></button>
             </div>
         </section>
+
+        <section id="pantalla-categorias" class="animate__animated animate__slideInLeft">
+            <h2 class="titulo">Seleccione la categoria</h2>
+            <button class="boton" id="boton-juegoPersonalizado"><span>Juego personalizado</span></button>
+            <br>
+            <button class="boton" id="botonFutbol"><span>Equipos de Futbol</span></button>
+            <button class="boton" id="botonAnimales"><span>Animales</span></button>
+            <button class="boton" id="botonTecnologia"><span>Tecnologia</span></button>
+        </section>
+
+        <section id="pantalla-juego" class="animate__animated animate__slideInLeft">
+            <div id="tablero-juego">
+                <h2 class="titulo">Adivina la palabra</h2>
+                <div class="Contenedor-vidas">
+                    <h3>Vidas Restantes</h3>
+                    <i class="bi bi-heart-fill vida" id="vida1"></i>
+                    <i class="bi bi-heart-fill vida" id="vida2"></i>
+                    <i class="bi bi-heart-fill vida" id="vida3"></i>
+                    <i class="bi bi-heart-fill vida" id="vida4"></i>
+                    <i class="bi bi-heart-fill vida" id="vida5"></i>
+                </div>
+            </div>
+        </section>
+
+
+
     </main>
 
-    <footer id="footer">
-            <h2>Heredia Nicolas</h2>
+    <!-- <footer id="footer">
+            <h2>&copy; Heredia Nicolas</h2>
             <h2>Challenge Alura N°2</h2>
             <a href="https://github.com/NicHeredia" target="_blank"><i class="bi bi-github footer-icon"></i></a>
             <a href="https://www.linkedin.com/in/heredianico/" target="_blank"><i class="bi bi-linkedin footer-icon"></i></a>
-    </footer>
+    </footer> -->
 </body>
-<script src="js/AgregarPalabra.js"></script>
+<script src="js/TransicionesYBotones.js"></script>
+<script src="js/Ahorcado-Juego.js"></script>
 </html>

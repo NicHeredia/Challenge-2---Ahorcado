@@ -21,6 +21,7 @@ body {
 
 #main{
     min-height: 490px;
+    max-height: 650px;
     margin: 20px 10px auto;
 }
 
@@ -28,7 +29,7 @@ body {
 /* ---Seccion principal--- */
 #pantalla-principal{
     text-align: center;
-}
+    }
 
 .titulo{
     font-family: 'Merienda', cursive;
@@ -40,7 +41,7 @@ body {
     margin: 20px;
 }
 
-.botones__pantallaPrincipal{
+.botones__pantalla-principal{
     display: flex;
     margin-top: 80px;
     flex-direction: column;
@@ -51,7 +52,9 @@ body {
 
 /* ---fin seccion principal--- */
 
-button {
+/* Diseño de Botones */
+
+.boton {
     min-width: 200px;
     outline: none;
     cursor: pointer;
@@ -71,18 +74,18 @@ button {
     color: #e5e5e5
    }
    
-   button span {
+   .boton span {
     position: relative;
     z-index: 10;
     transition: color 0.4s;
    }
    
-   button:hover span {
+   .boton:hover span {
     color: black;
    }
    
-   button::before,
-   button::after {
+   .boton::before,
+   .boton::after {
     position: absolute;
     top: 0;
     left: 0;
@@ -91,22 +94,22 @@ button {
     z-index: 0;
    }
    
-   button::before {
+   .boton::before {
     content: "";
-    background: black;
+    background: #000000;
     width: 120%;
     left: -10%;
     transform: skew(30deg);
     transition: transform 0.6s cubic-bezier(0.3, 1, 0.8, 1);
    }
    
-   button:hover::before {
+   .boton:hover::before {
     transform: translate3d(100%, 0, 0);
    }
 
    /* ---Inicio seccion agregar palabras--- */
 
-   #section-agregar-palabra{
+   #pantalla-agregarPalabra{
        display: flex;
        flex-direction: column;
        align-items: center;
@@ -120,14 +123,9 @@ button {
        margin: 5px;
    }
 
-   #mostrarPalabrasNuevas{
-     color: crimson;
-     margin: 20px;
-     display: none;
-   }
-
 
 /* From uiverse.io by @WhiteNervosa */
+/* Diseño del input para agregar palabra nueva */
 .textInputWrapper {
     position: relative;
     width: 260px;
@@ -223,17 +221,96 @@ button {
 
   /* Fin seccion agregar palabra */
 
+/* seccion como se juega */
+
+#pantalla-comoJugar{
+  text-align: center;
+  width: 80%;
+  margin: 40px auto;
+  display: none;
+}
+
+#pantalla-comoJugar h2{
+  margin-bottom: 15px;
+}
+
+#pantalla-comoJugar p{
+  margin-bottom: 20px;
+}
+
+li {
+  width: 90%;
+  margin: 10px auto;
+}
+
+
+  /* seccion nuevo-juego */
+
+  #pantalla-categorias{
+    text-align: center;
+    display: none;
+  }
+
+  #pantalla-categorias h2 {
+    margin: 40px;
+  }
+
+  /* fin seccion categorias */
+
+  /* inicio seccion juego */
+
+  #pantalla-juego{
+    text-align: center;
+    display: none;
+  }
+
+
+
+  .Contenedor-vidas{
+    margin: 40px ;
+  }
+
+  .vida{
+    color: crimson;
+    font-size: 36px;
+  }
+
+  .guionPalabraSecreta{
+    display: inline-block;
+    min-width: 28px;
+    max-width: 30px;
+    margin: 4px;
+    border-bottom: solid 2px black;
+    letter-spacing: 4px;
+  }
+
+  .letra-oculta{
+    font-size: 32px;
+    opacity: 1  ;
+  }
+
+  .mostrarLetra{
+    opacity: 1;
+  }
+
+
+
+
+  /* fin seccion nuevo-juego */
+
+
   /* inicio footer */
 
-  #footer{
+  /* #footer{
     width: 100%;
     padding: 20px;
     color: #CFDEF3;
-    background-color: #252525;
+    background-color: black;
     text-align: center;
     font-size: 10px;
     position: absolute;
     bottom: 0;
+    display: none;
   }
 
   
@@ -242,4 +319,4 @@ button {
     font-size: 24px;
     color: #ffb703
   }
-  
+   */
