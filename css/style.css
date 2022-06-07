@@ -289,11 +289,11 @@ li {
     opacity: 0  ;
   }
 
-  .mostrarLetra{
-    opacity: 1;
+  #abrir-teclado{
+    width: 40px;
   }
 
-
+  
 
 
   /* fin seccion nuevo-juego */
@@ -301,7 +301,7 @@ li {
 
   /* inicio footer */
 
-  /* #footer{
+  #footer{
     width: 100%;
     padding: 20px;
     color: #CFDEF3;
@@ -310,7 +310,6 @@ li {
     font-size: 10px;
     position: absolute;
     bottom: 0;
-    display: none;
   }
 
   
@@ -319,4 +318,4 @@ li {
     font-size: 24px;
     color: #ffb703
   }
-   */
+   
