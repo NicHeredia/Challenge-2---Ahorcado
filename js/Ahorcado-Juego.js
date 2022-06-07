@@ -1,18 +1,8 @@
-//arrays que contienen las palabras de la categoria elegida
-var equiposFutbol = ["BOCA JUNIORS", "BARCELONA", "ARSENAL", "MILAN","INDEPENDIENTE","RACING"];
-var animales = ["PERRO", "GATO", "CABALLO", "CABRA", "CERDO"];
-var tecnologia = ["IPHONE", "ANDROID", "NETFLIX", "AMAZON", "JAVASCRIPT"];
-
-//capturar que boton se presiono en pantallaCategorias
-var botonFutbol = document.getElementById("botonFutbol");
-var botonAnimales = document.querySelector("#botonAnimales");
-var botonTecnologia = document.querySelector("#botonTecnologia");
-var botonGuardarYJugar = document.querySelector("#botonGuardarYJugar");
-
 
 //Elegir palabra random y crear los guiones correspondientes con las letras
 //ocultas
 var palabraSecreta = "";
+
 function crearGuionesPalabra(array){
     palabraSecreta = array[Math.floor(Math.random()*array.length)];
     var tableroJuego = document.getElementById("tablero-juego");
@@ -33,17 +23,17 @@ function crearGuionesPalabra(array){
 
 botonFutbol.addEventListener("click", function(e){
     transicionPantallas(pantallaCategorias,"none",pantallaJuego,"block");
-    crearGuionesPalabra(equiposFutbol);
+    iniciarJuego(equiposFutbol);
 })
 
 botonAnimales.addEventListener("click", function(e){
     transicionPantallas(pantallaCategorias,"none",pantallaJuego,"block");
-    crearGuionesPalabra(animales);
+    iniciarJuego(animales);
 })
 
 botonTecnologia.addEventListener("click", function(e){
     transicionPantallas(pantallaCategorias,"none",pantallaJuego,"block");
-    crearGuionesPalabra(tecnologia);
+    iniciarJuego(tecnologia);
 })
 
 
@@ -61,9 +51,132 @@ botonGuardarYJugar.addEventListener("click", function(e){
     var palabraElegida = [];
     palabraElegida.push(inputNuevaPalabra.value);
     palabraSecreta = palabraElegida[0];
-    crearGuionesPalabra(palabraElegida);
     transicionPantallas(pantallaAgregarPalabra,"none",pantallaJuego,"block");
+    iniciarJuego(palabraElegida);
 })
+
+
+var letraOculta = document.getElementsByClassName("letra-oculta");
+var letrasPresionadas = document.getElementById("letrasIncorrectas");
+var cantidadVidas = document.querySelectorAll(".vida");
+
+//Inicio de las reglas y del juego en si
+var aciertos = 0;
+var errores = 5;
+var vidasDisponibles = 4;
+var letrasseleccionadas = "";
+var letrasUsadas = [];
+
+
+function juegoPerdido(){
+    alert("PERDISTE PELOTUDO");
+}
+
+
+function juegoGanado(){
+    alert("GANASTE");
+}
+
+
+function letraEsIncorrecta(){
+    cantidadVidas[vidasDisponibles].style.opacity = 0
+    errores--
+    vidasDisponibles--
+    if (errores == 0){
+        juegoPerdido();
+    }
+}
+
+
+
+function letraEsCorrecta(letraPresionada){
+    for (let i = 0; i <= (palabraSecreta.length - 1); i++){
+        if ((letraPresionada) === (letraOculta[i].textContent)){
+            letraOculta[i].style.opacity = 1;
+            aciertos++
+         }
+    }
+    if (aciertos == (palabraSecreta.length)){
+        juegoGanado();
+    }
+}
+
+
+
+function letraesValida(letraPresionada){
+    if (palabraSecreta.includes(letraPresionada)){
+        letraEsCorrecta(letraPresionada);
+    } else {
+        letraEsIncorrecta(letraPresionada);
+    }
+
+}
+
+
+function eventoLetra(e){
+    let letraPresionada = (e.key.toUpperCase());
+    if (letraPresionada.match(/^[a-zñ]$/i) && !letrasUsadas.includes(letraPresionada)) {
+
+        letraesValida(letraPresionada); 
+    }
+} 
+
+
+function iniciarJuego(array){
+    document.addEventListener("keydown", eventoLetra)   
+    crearGuionesPalabra(array);
+}
+
+
+
+
+
+
+// for (let i = 0; i <= (palabraSecreta.length - 1); i++){
+//     if ((e.key.toUpperCase()) === (letraOculta[i].textContent)){
+//         letraOculta[i].style.opacity = 1;
+//     }
+// }
+// letrasIncorrectas.push(e.key.toUpperCase());
+// letrasPresionadas.textContent = "letras presionadas: " + letrasIncorrectas;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

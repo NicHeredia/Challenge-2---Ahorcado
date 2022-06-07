@@ -43,6 +43,17 @@ botonJugar.addEventListener("click", function(e){
     transicionPantallas(pantallaComoJugar, "none", pantallaCategorias,"block");
 })
 
+//arrays que contienen las palabras de la categoria elegida
+var equiposFutbol = ["BOCA JUNIORS", "BARCELONA", "ARSENAL", "MILAN","INDEPENDIENTE","RACING"];
+var animales = ["PERRO", "GATO", "CABALLO", "CABRA", "CERDO"];
+var tecnologia = ["IPHONE", "ANDROID", "NETFLIX", "AMAZON", "JAVASCRIPT"];
+
+//capturar que boton se presiono en pantallaCategorias
+var botonFutbol = document.getElementById("botonFutbol");
+var botonAnimales = document.querySelector("#botonAnimales");
+var botonTecnologia = document.querySelector("#botonTecnologia");
+var botonGuardarYJugar = document.querySelector("#botonGuardarYJugar");
+
 
 // Funcionamiento de la seccion de agregar una palabra
 
